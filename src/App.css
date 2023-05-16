@@ -1,38 +1,269 @@
-.App {
-  text-align: center;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+.App{
+  height: 100vh;
+}
+body {
+
+  font-size: 20px;;
+  font-family: 'Merriweather', serif;
+
+
+}
+
+header h1{
+  padding-top: 60px;color:#A252D6
+}
+
+header,
+form {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+form{
+  margin:30px;
+
+}
+form input,
+form button {
+  padding: 0.9rem;
+  font-size: 2rem;
+  border: none;
+  background: #F6EDFC;
+  border-radius: 10px;;
+  font-size: 20px;;
+}
+input:focus
+{
+    border: 1px solid #A252D6;
+    box-shadow: 0 0 3px #A252D6;
+    outline-offset: 0px;
+    outline: none;
+}
+
+form button {
+  background: #A252D6;
+  color: #F6EDFC;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;;
+  margin-left: 20px;;
+  font-size: 18px;;
+padding: 15px;
+
+ 
+}
+form button:hover, .fa-trash:hover, .fa-check:hover{
+transition: all .2s ease-in-out;
+transform: scale(1.1);
+
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+
+  
+}
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  font-size: 18px;;
+  background-color:#F6EDFC ;
+}
+
+/* Custom Select */
+.select {
+  margin-left: 30px;
+  position: relative;
+  overflow: hidden;
+  height: 60px;;
+
+
+}
+select {
+  color: #A252D6;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 180px;
+  border-radius: 15px;;
+}
+/* Arrow */
+.select::after {
+ 
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 14.5px;
+  color:white;
+  background: #A252D6;
+  cursor: pointer;
   pointer-events: none;
+  border-radius: 15px;;
+  border-top-left-radius: 0;;
+  border-bottom-left-radius: 0;
+
+}
+/* Transition */
+/*
+.select:hover::after {
+  transform: scale(1.5);
+}
+*/
+
+.todo {
+  margin: 0.8rem;
+  background: #F6EDFC;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+  border-radius: 10px;;
+
+
+}
+.filter-todo {
+  padding: 1rem;
+}
+.todo li {
+  flex: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.trash-btn,
+.complete-btn {
+  background: #A252D6;
+  color: F2F5F7;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+ 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.trash-btn{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;;
+}
+.complete-btn {
+  background: #1AB262;
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+
+  
+}
+
+
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+
+/*theme*/
+
+
+#light{
+  background-color: #f3ebf6;
+ 
+
+}
+#dark{
+  background-color: #46045e;
+
+}
+
+
+.main{
+  /* width: 500px;*/
+
+
+padding:50px;
+height: 70vh;;
+margin: 5vw;
+  border-radius: 1.5rem;
+  box-shadow: 0px 11px 35px 2px rgba(0,0,0,0.14);
+
+}
+
+#light .main{
+  background-image: linear-gradient(120deg, #ffff 0%, #ffff 100%);
+}
+
+#dark .main{
+  background-image: linear-gradient(120deg, #38004c 0%, #38004c 100%);
+
+}
+.switch{
+  position: absolute;
+  top:20px;
+  right: 20px;;
+ 
+}
+
+label{
+  margin-right: 10px;;
+  margin-bottom:20px;
+
+}
+#light  label{
+  color:black;
+}
+
+#dark label
+{
+  color:white;
+}
+@media only screen and (max-width: 800px){
+form{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.addInput{
+  display: flex;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.addInput>  button{
+  margin-top: 10px;
+ height: 50px;;
+}
+form input , .select{
+  width: 200px;
+  margin:10px;
+}
 }
